@@ -48,6 +48,7 @@ jobs:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
        args: ${{ steps.tag_version.outputs.tag }}
+       title: MyReleaseMessage ${{ steps.tag_version.outputs.tag }}
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
